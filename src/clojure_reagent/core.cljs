@@ -8,6 +8,9 @@
 
 (def click-count (r/atom 0))
 
+
+(defn click_count_change [num] [:span  {:style {:color "blue" :backgroundColor "gray" }} "num:" num] )
+
 ;; -------------------------
 ;; Views
 (defn on_click [e] (log "pressed!"))
@@ -27,7 +30,8 @@
 	    [:h4 "click count: " @click-count]
 	    [:button  {:on-click #(swap! click-count inc)} "Increment"]
 	    [:button  {:on-click #(swap! click-count dec)} "Ddecrement"]
-
+	    [:hr]
+	    [:span (click_count_change 42)]
 	])
 
 

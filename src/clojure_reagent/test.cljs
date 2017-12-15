@@ -1,5 +1,5 @@
 (ns clojure-reagent.test)
 
 
-(defn test_fn []
-	[:div [:h2 "test!"]])
+(defn test_fn [number]
+	[:div [:h2 "test_fn: " number]])
